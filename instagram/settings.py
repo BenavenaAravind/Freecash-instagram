@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-itxb_-#5=+)t2c7$#la6s+i!8iio*b$jfwncj2=yi&g0qy+6g$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['freecash-watch-videos-in-instagram-to-win.onrender.com']
 
 
 # Application definition
